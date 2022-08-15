@@ -16,11 +16,11 @@ const LoginScreen = () => {
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
-                    console.log('That email address is already in use!');
+                    alert('That email address is already in use!');
                 }
 
                 if (error.code === 'auth/invalid-email') {
-                    console.log('That email address is invalid!');
+                    alert('That email address is invalid!');
                 }
 
                 console.error(error);
@@ -30,6 +30,9 @@ const LoginScreen = () => {
 
     return (
         <View style={styles.container}>
+            <View style={styles.title}>
+                <Text style={styles.titleText}>FIRESHIP LOGIN</Text>
+            </View>
             <View style={styles.inputContainer}>
                 <TextInput placeholder="Email"
                     value={email}
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
         borderColor: 'grey',
     },
     buttonContainer: {
-        marginTop: 30,
+        marginTop: 60,
         width: '30%',
 
     },
@@ -106,9 +109,17 @@ const styles = StyleSheet.create({
     },
     registerButton: {
         backgroundColor: '#FF9F29',
+        marginBottom: 100,
     },
     registerButtonText: {
         color: '#1A4D2E',
         fontWeight: 'bold',
+    },
+    titleText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        fontFamily: 'Object Sans',
+        color: '#AC4425',
+        marginBottom: 150,
     },
 })
