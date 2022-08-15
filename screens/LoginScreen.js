@@ -12,7 +12,7 @@ const LoginScreen = () => {
         auth
             .createUserWithEmailAndPassword(email, password)
             .then(() => {
-                console.log('User account created & signed in!');
+                alert('User account created!');
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
